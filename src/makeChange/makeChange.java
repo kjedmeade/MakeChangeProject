@@ -13,34 +13,63 @@ public class makeChange {
 		
 		
 		double changeA = num2 - num1;
-		double changeB = findDollars(changeA);
-		double changeC= changeA-changeB;
-		double changeD=findQuarters(changeC);
-		double changeE=(changeD*.25)+changeB;
-		double changeF= changeA-changeE;
-		double changeG= findDimes(changeF);
-		double changeH= (changeG*.1)+ (changeD*.25)+changeB;
-		double changeI= changeA-changeH;
-		double changeJ =findNickels(changeI);
-		double changeK= (changeH*.05)+(changeG*.1)+ (changeD*.25)+changeB;
-		double changeL= changeA-changeK;
-		double changeM =findPennies(changeL);
 		
+		double changeB = findTenDollars(changeA);
+		double changeC=(changeB*10);
+		double changeD= changeA-changeC;
+		double changeE=findFiveDollars(changeD);
+		double changeF=(changeE*5)+(changeB*10);
+		double changeG= changeA-changeF;
+		double changeH=findOneDollars(changeG);
+		double changeI=(changeH*1)+(changeE*5)+(changeB*10);
+		double changeJ= changeA-changeI;
+		double changeK=findQuarters(changeJ);
+		double changeL=(changeK*.25)+(changeH*1)+(changeE*5)+(changeB*10);
+		double changeM= changeA-changeL;
+		double changeO= findDimes(changeM);
+		double changeP= (changeO*.1)+(changeK*.25)+(changeH*1)+(changeE*5)+(changeB*10);
+		double changeQ= changeA-changeP;
+		double changeR =findNickels(changeQ);
+		double changeS= (changeR*.05)+(changeO*.1)+(changeK*.25)+(changeH*1)+(changeE*5)+(changeB*10);
+		double changeT= changeA-changeS;
+		double changeU =findPennies(changeT);
 		
+		if (changeA<=0) {
+			System.out.println("You have entered an incorrect entry");
+		}
+		else
+			System.out.println("Your change is " + changeB + " ten dollars, " +changeE+" five dollars, " + changeH + " one dollars, "+ changeK+ " quarters, "+ changeO+ " dimes, "+ changeR+ " nickels, and "+ changeU+ " pennies ") ;
 		
-		System.out.println("Your change is " + changeB + " dollars, " +changeD+" quarters, " + changeG + " dimes, "+ changeJ+ " nickels, "+ changeM+" pennies, ") ;
+
 
 		scanner.close();
-
 	}
 
-public static int findDollars(double change) {
+public static int findTenDollars(double change) {
 
-	int dollars=0;
+	int tendollars=0;
+	if (change/10>=1) {
+		tendollars= (int)(change/10);	
+	}
+	return tendollars;
+}
+public static int findFiveDollars(double change) {
+
+	int fivedollars=0;
+	if (change/5>=1) {
+		fivedollars= (int)(change/5);	
+	}
+	return fivedollars;
+	
+}
+
+public static int findOneDollars(double change) {
+
+	int onedollars=0;
 	if (change/1>=1) {
-		dollars= (int)(change/1);	
+		onedollars= (int)(change/1);	
 	}
-	return dollars;
+	return onedollars;
 }
 
 public static int findQuarters(double change) {
@@ -74,11 +103,14 @@ public static int findPennies(double change) {
 
 	int pennies=0;
 	if (change/.01>=1) {
-		pennies= (int)(change/.01);	
+		pennies= (int)((change/.01)+.01);	
 	}
 	return pennies;
 }
+	
 
 
-
+		
 }
+
+

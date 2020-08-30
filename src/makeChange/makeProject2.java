@@ -102,3 +102,28 @@ int quarters= (int) (rem1/.25);
 		else{
 			
 			return zero;
+			
+			public static void printOut(double change double changZ double changY double changX double changW double changV double changU double changT) {
+				if (change>=1) {
+					System.out.println("Your change is " + changZ + " ten dollars, " +changY+" five dollars, " + changX + " one dollars, "+ changW+ " quarters, "+ changeV+ " dimes, "+ changeU+ " nickels, and "+ changeT+ " pennies ");
+				}
+					if (change<=0){
+					System.out.println("You have entered an incorrect entry");
+				
+					}
+					
+					
+					public static void printOut(double changeA, double changZ, double changY, double changX, double changW, double changV, double changU, double changT) {
+						if (changeA>=1) {
+							System.out.println("Your change is " + changZ + " ten dollars, " +changY+" five dollars, " + changX + " one dollars, "+ changW+ " quarters, "+ changeV+ " dimes, "+ changeU+ " nickels, and "+ changeT+ " pennies ");
+						}
+						else {
+							System.out.println("You have entered an incorrect entry");
+							}
+						
+						public static void errorMessage(double change) {
+							if (change<=0) {
+								System.err.println("You have entered an incorrect entry");
+							}
+						}
+				
