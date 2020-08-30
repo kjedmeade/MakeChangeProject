@@ -34,15 +34,17 @@ public class makeChange {
 		double changeT= changeA-changeS;
 		double changeU =findPennies(changeT);
 		
-		if (changeA<=0) {
+		if (changeA>=0 && num2>=.01 && num2<=20) {
+			System.out.println("Your change is " + changeB + " ten dollar bils, " +changeE+" five dollars bills, " + changeH + " one dollar bills, "+ changeK+ " quarters, "+ changeO+ " dimes, "+ changeR+ " nickels, and "+ changeU+ " pennies ") ;
+			
+		}
+		else {
 			System.out.println("You have entered an incorrect entry");
 		}
-		else
-			System.out.println("Your change is " + changeB + " ten dollars, " +changeE+" five dollars, " + changeH + " one dollars, "+ changeK+ " quarters, "+ changeO+ " dimes, "+ changeR+ " nickels, and "+ changeU+ " pennies ") ;
-		
 
 
 		scanner.close();
+		
 	}
 
 public static int findTenDollars(double change) {
