@@ -1,74 +1,71 @@
 package makeChange;
 
+import java.util.Scanner;
+
 public class makeChange {
 
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter purchase price ");
-		int num1 = sc.newInt();
+		double num1 = scanner.nextDouble();
 		System.out.println("Amount tendered");
-		int num2= sc.nextInt();
+		double num2 = scanner.nextDouble();
+		
+		
+		double changeA = num2 - num1;
+		double changeB = makeChange(changeA);
+		
+		
+		System.out.println("Your change is " + changeB + "dollars") ;
 
-		
-		
-		
-	change =num1-num2
-	 if change %1.00>1
-	 	dollars= (int) change/1.00
-	 	rem1= change-dollars
+		scanner.close();
+
+	}
+
+public static int makeChange(double change) {
+	
+	int dollars= (int)(change/1.00);
+	double rem1= change-dollars;
+	
+	int quarters= (int) (rem1/.25);
+ 	double rem2= rem1-quarters;
+ 	
+ 	int dimes= (int) (rem2/.1);
+ 	double rem3= rem2-dimes;
+ 	
+ 	int nickels= (int) (rem3/.05);
+ 	double rem4= rem3-nickels;
+ 	
+ 	int pennies= (int) (rem4/.1);
+ 	double rem5= rem4-pennies;
+ 	
+ 	int zero = 0;
+	
+	if (change/1.00>=1) {
+		return dollars;
+	}
 	 	
-	 else if rem1 %.25>=1
-	 quarters= (int) rem1/.25
-	 rem2= rem1-quarters
+	 else if (rem1/.25>=1) {
+	 	return quarters;
 	 	
-	else if rem1 %.1>=1
-	dimes= (int) rem2/.1
-	rem3= rem2-dimes
+	 }
+	 	
+	else if (rem1/.1>=1) {
+		return dimes;
+	}
 	
-	else if rem3 %.05>=1
-	nickels= (int) rem3/.05
-	rem4= rem3-nickels
+	else if (rem3 /.05>=1) {
+		return nickels;
+	}	
 	
-	else if rem4 %.01>=1
-	pennies= (int) rem4/.1
-	rem5= rem4-pennies
-	
-	else
-		System.err.println("error);
-	
-				
-		Sysout(Your change is rem1 +" dollars "+ rem2 + " quarters "+ rem3 + " dimes " + rem4+" nickels ")		
-	
+	else if (rem4 /.01>=1) {
+		return pennies;
+	}
+
+	else{
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		if num1-num2%
+		return zero;
+	}
+}
+
+}
