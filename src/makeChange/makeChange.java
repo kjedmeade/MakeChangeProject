@@ -13,59 +13,72 @@ public class makeChange {
 		
 		
 		double changeA = num2 - num1;
-		double changeB = makeChange(changeA);
+		double changeB = findDollars(changeA);
+		double changeC= changeA-changeB;
+		double changeD=findQuarters(changeC);
+		double changeE=(changeD*.25)+changeB;
+		double changeF= changeA-changeE;
+		double changeG= findDimes(changeF);
+		double changeH= (changeG*.1)+ (changeD*.25)+changeB;
+		double changeI= changeA-changeH;
+		double changeJ =findNickels(changeI);
+		double changeK= (changeH*.05)+(changeG*.1)+ (changeD*.25)+changeB;
+		double changeL= changeA-changeK;
+		double changeM =findPennies(changeL);
 		
 		
-		System.out.println("Your change is " + changeB + "dollars") ;
+		
+		System.out.println("Your change is " + changeB + " dollars, " +changeD+" quarters, " + changeG + " dimes, "+ changeJ+ " nickels, "+ changeM+" pennies, ") ;
 
 		scanner.close();
 
 	}
 
-public static int makeChange(double change) {
-	
-	int dollars= (int)(change/1.00);
-	double rem1= change-dollars;
-	
-	int quarters= (int) (rem1/.25);
- 	double rem2= rem1-quarters;
- 	
- 	int dimes= (int) (rem2/.1);
- 	double rem3= rem2-dimes;
- 	
- 	int nickels= (int) (rem3/.05);
- 	double rem4= rem3-nickels;
- 	
- 	int pennies= (int) (rem4/.1);
- 	double rem5= rem4-pennies;
- 	
- 	int zero = 0;
-	
-	if (change/1.00>=1) {
-		return dollars;
-	}
-	 	
-	 else if (rem1/.25>=1) {
-	 	return quarters;
-	 	
-	 }
-	 	
-	else if (rem1/.1>=1) {
-		return dimes;
-	}
-	
-	else if (rem3 /.05>=1) {
-		return nickels;
-	}	
-	
-	else if (rem4 /.01>=1) {
-		return pennies;
-	}
+public static int findDollars(double change) {
 
-	else{
-		
-		return zero;
+	int dollars=0;
+	if (change/1>=1) {
+		dollars= (int)(change/1);	
 	}
+	return dollars;
 }
+
+public static int findQuarters(double change) {
+
+	int quarters=0;
+	if (change/.25>=1) {
+		quarters= (int)(change/.25);	
+	}
+	return quarters;
+}
+
+public static int findDimes(double change) {
+
+	int dimes=0;
+	if (change/.1>=1) {
+		dimes= (int)(change/.1);	
+	}
+	return dimes;
+}
+
+public static int findNickels(double change) {
+
+	int nickels=0;
+	if (change/.05>=1) {
+		nickels= (int)(change/.05);	
+	}
+	return nickels;
+}
+
+public static int findPennies(double change) {
+
+	int pennies=0;
+	if (change/.01>=1) {
+		pennies= (int)(change/.01);	
+	}
+	return pennies;
+}
+
+
 
 }
