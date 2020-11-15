@@ -20,5 +20,5 @@ If amount tendered is greater than .01, less than 20, and change is greater than
 If amount tendered does not pass these checkpoints, the user will receive an error message.
 
 
-* Instructions
+### Instructions
 User simply enters the purchase price and cash tendered. The computer will print an error message or list of the amount of cash/coin types the user will receive in return.
