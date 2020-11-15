@@ -7,7 +7,6 @@ This code was written to simulate a cash register or self checkout kiosk. The us
 ### Topics
 
 * Taking User Input
-
 Two types of input are taken from the user using a scanner: 1) Purchase price and 2) Cash tendered.
 
 * Variables
@@ -20,6 +19,6 @@ Each method is similiar in setup. The main differences involve quantity of cash/
 If amount tendered is greater than .01, less than 20, and change is greater than 0, the user will receive a message indicating how much change they will receive in each of the cash/coin types.
 If amount tendered does not pass these checkpoints, the user will receive an error message.
 
-* Instructions
 
+* Instructions
 User simply enters the purchase price and cash tendered. The computer will print an error message or list of the amount of cash/coin types the user will receive in return.
